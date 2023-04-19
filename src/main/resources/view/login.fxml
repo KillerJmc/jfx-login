@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.*?>
+<?import com.jfoenix.controls.*?>
+<?import javafx.scene.control.Label?>
+
+<!-- 栈布局：后者会把前者覆盖，可用于放对话框 -->
+<?import javafx.scene.text.Text?>
+<StackPane stylesheets="@../css/login.css"
+           xmlns:fx="http://javafx.com/fxml" fx:id="rootPane" fx:controller="com.jmc.login.controller.LoginController">
+
+    <!-- 垂直布局：从上往下放 -->
+    <VBox styleClass="main">
+        <JFXTextField promptText="请输入账号" fx:id="accountText" />
+        <JFXPasswordField promptText="请输入密码" fx:id="passwordText" />
+        <JFXButton text="登录" styleClass="login-button" onAction="#login"/>
+    </VBox>
+
+    <!-- 对话框 -->
+    <JFXDialog fx:id="loginResultDialog">
+        <JFXDialogLayout>
+            <heading>
+                <Text styleClass="dialogHeader">登录结果</Text>
+            </heading>
+            <body>
+                <Text fx:id="dialogText"/>
+            </body>
+            <actions>
+                <JFXButton styleClass="confirm-button" text="确定" onAction="#closeDialog"/>
+            </actions>
+        </JFXDialogLayout>
+    </JFXDialog>
+</StackPane>

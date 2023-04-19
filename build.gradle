@@ -1,0 +1,37 @@
+plugins {
+    id "java"
+    id "application"
+    id "org.openjfx.javafxplugin" version "0.0.13"
+    id "org.beryx.jlink" version "2.26.0"
+}
+
+group "com.jmc"
+version "1.0.0"
+sourceCompatibility = "17"
+
+repositories {
+    mavenCentral()
+}
+
+ext {
+    jfoenixVersion = "9.0.10"
+    lombokVersion = "1.18.20"
+}
+
+dependencies {
+    implementation "com.jfoenix:jfoenix:$jfoenixVersion"
+    compileOnly "org.projectlombok:lombok:$lombokVersion"
+    annotationProcessor "org.projectlombok:lombok:$lombokVersion"
+}
+
+javafx {
+    version = "17.0.2"
+    modules = ["javafx.controls", "javafx.fxml"]
+}
+
+application {
+    mainModule = "jfxlogin"
+    mainClass = "com.jmc.login.LoginApp"
+    applicationDefaultJvmArgs = ["--add-opens=java.base/java.lang.reflect=com.jfoenix"]
+}
+

@@ -1,0 +1,22 @@
+.main {
+    -fx-alignment: center;
+    -fx-spacing: 20px;
+    -fx-background-color: white;
+}
+
+.login-button {
+    -fx-pref-width: 80px;
+    -fx-text-fill: white;
+    -fx-background-color: #0066ff;
+}
+
+.dialogHeader {
+    -fx-font-size: 13px;
+}
+
+.confirm-button {
+    -fx-pref-width: 50px;
+    -fx-text-fill: white;
+    -fx-background-color: #0066ff;
+}
+
