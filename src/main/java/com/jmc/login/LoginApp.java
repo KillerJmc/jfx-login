@@ -1,10 +1,14 @@
 package com.jmc.login;
 
+import com.jmc.login.common.FxmlPath;
+import com.jmc.login.util.JFXUtils;
 import javafx.application.Application;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Scene;
 import javafx.stage.Stage;
 
+/**
+ * 登录App启动类
+ * @author Jmc
+ */
 public class LoginApp extends Application {
     public static void main(String[] args) {
         launch(args);
@@ -12,15 +16,6 @@ public class LoginApp extends Application {
 
     @Override
     public void start(Stage stage) throws Exception {
-        var layoutPath = "/view/login.fxml";
-        var title = "登录";
-        var width = 350;
-        var height = 300;
-
-        var loader = new FXMLLoader(getClass().getResource(layoutPath));
-        var scene = new Scene(loader.load(), width, height);
-        stage.setTitle(title);
-        stage.setScene(scene);
-        stage.show();
+        JFXUtils.showSceneInStage(stage, FxmlPath.LOGIN, "登录", 260, 300);
     }
 }

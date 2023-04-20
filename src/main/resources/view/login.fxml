@@ -1,13 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.layout.*?>
 <?import com.jfoenix.controls.*?>
-<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Text?>
 
 <!-- 栈布局：后者会把前者覆盖，可用于放对话框 -->
-<?import javafx.scene.text.Text?>
 <StackPane stylesheets="@../css/login.css"
-           xmlns:fx="http://javafx.com/fxml" fx:id="rootPane" fx:controller="com.jmc.login.controller.LoginController">
+           xmlns:fx="http://javafx.com/fxml" fx:id="rootView" fx:controller="com.jmc.login.controller.LoginController">
 
     <!-- 垂直布局：从上往下放 -->
     <VBox styleClass="main">

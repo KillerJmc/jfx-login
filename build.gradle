@@ -11,17 +11,18 @@ sourceCompatibility = "17"
 
 repositories {
     mavenCentral()
+    mavenLocal()
+    maven { url "https://killerjmc.github.io/jmc-utils/repo" }
 }
 
 ext {
     jfoenixVersion = "9.0.10"
-    lombokVersion = "1.18.20"
+    jmcUtilsVersion = "3.4.1"
 }
 
 dependencies {
     implementation "com.jfoenix:jfoenix:$jfoenixVersion"
-    compileOnly "org.projectlombok:lombok:$lombokVersion"
-    annotationProcessor "org.projectlombok:lombok:$lombokVersion"
+    implementation "com.jmc:jmc-utils:$jmcUtilsVersion"
 }
 
 javafx {
@@ -32,6 +33,9 @@ javafx {
 application {
     mainModule = "jfxlogin"
     mainClass = "com.jmc.login.LoginApp"
-    applicationDefaultJvmArgs = ["--add-opens=java.base/java.lang.reflect=com.jfoenix"]
+    applicationDefaultJvmArgs = [
+        "--add-opens=java.base/java.lang.reflect=com.jfoenix",
+        "--add-opens=javafx.base/com.sun.javafx.event=com.jfoenix"
+    ]
 }
 

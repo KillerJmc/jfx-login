@@ -2,9 +2,8 @@ module jfxlogin {
     requires javafx.controls;
     requires javafx.fxml;
     requires com.jfoenix;
-    requires static lombok;
+    requires jmc.utils;
 
-    exports com.jmc.login;
-    exports com.jmc.login.controller;
+    exports com.jmc.login to javafx.fxml, javafx.graphics;
     opens com.jmc.login.controller to javafx.fxml;
 }

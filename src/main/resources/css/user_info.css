@@ -1,0 +1,15 @@
+.main {
+    -fx-alignment: center;
+    -fx-spacing: 20px;
+    -fx-background-color: white;
+}
+
+.user-box {
+    -fx-alignment: center;
+    -fx-spacing: 0px;
+}
+
+.return-button {
+    -fx-background-color: #0066ff;
+    -fx-text-fill: white;
+}

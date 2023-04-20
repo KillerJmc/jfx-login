@@ -1,17 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
+<?import com.jfoenix.controls.*?>
 <?import javafx.scene.layout.*?>
-
 <?import javafx.scene.text.Text?>
-<VBox xmlns:fx="http://javafx.com/fxml" fx:controller="com.jmc.login.controller.UserInfoController">
-    <HBox>
+
+<VBox stylesheets="@../css/user_info.css" styleClass="main"
+      xmlns:fx="http://javafx.com/fxml" fx:controller="com.jmc.login.controller.UserInfoController">
+    <HBox styleClass="user-box">
         <Text>用户：</Text>
-        <Text fx:id="accountText"/>
+        <Text fx:id="accountText">未知</Text>
     </HBox>
 
     <Text>欢迎你！</Text>
+    <JFXButton text="返回" styleClass="return-button" onAction="#returnAction"/>
 </VBox>
