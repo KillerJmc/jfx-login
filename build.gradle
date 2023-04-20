@@ -31,7 +31,7 @@ javafx {
 }
 
 application {
-    mainModule = "jfxlogin"
+    mainModule = "jfx.login"
     mainClass = "com.jmc.login.LoginApp"
     applicationDefaultJvmArgs = [
         "--add-opens=java.base/java.lang.reflect=com.jfoenix",
