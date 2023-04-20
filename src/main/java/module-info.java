@@ -1,4 +1,4 @@
-module jfxlogin {
+module jfx.login {
     requires javafx.controls;
     requires javafx.fxml;
     requires com.jfoenix;
