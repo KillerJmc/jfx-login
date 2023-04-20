@@ -2,4 +2,4 @@
 
 ## Description
 
-A JavaFX login app with **Jfoenix**.
+A JavaFX login app with **JFoenix**.
