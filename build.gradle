@@ -6,7 +6,7 @@ plugins {
 }
 
 group "com.jmc"
-version "1.0.0"
+version "1.1.0"
 sourceCompatibility = "17"
 
 repositories {
@@ -38,4 +38,15 @@ application {
         "--add-opens=javafx.base/com.sun.javafx.event=com.jfoenix"
     ]
 }
+
+jlink.jpackage {
+    // 通过解析group的包名的第二个变量首字母大写作为软件供应商名称
+    vendor = project.group.toString().tokenize('.')[1].capitalize()
+
+    // 对Windows应用安装器添加额外操作
+    if (org.gradle.internal.os.OperatingSystem.current().windows) {
+        installerOptions += ["--win-dir-chooser", "--win-menu", "--win-shortcut", "--win-shortcut-prompt"]
+    }
+}
+
 
