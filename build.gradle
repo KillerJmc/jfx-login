@@ -41,7 +41,7 @@ application {
 
 jlink.jpackage {
     // 通过解析group的包名的第二个变量首字母大写作为软件供应商名称
-    vendor = project.group.toString().tokenize('.')[1].capitalize()
+    vendor = project.group.toString().tokenize(".")[1].capitalize()
 
     // 对Windows应用安装器添加额外操作
     if (org.gradle.internal.os.OperatingSystem.current().windows) {
