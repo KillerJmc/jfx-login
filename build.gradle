@@ -1,3 +1,5 @@
+import java.nio.file.*
+
 plugins {
     id "java"
     id "application"
@@ -46,6 +48,15 @@ jlink.jpackage {
     // 对Windows应用安装器添加额外操作
     if (org.gradle.internal.os.OperatingSystem.current().windows) {
         installerOptions += ["--win-dir-chooser", "--win-menu", "--win-shortcut", "--win-shortcut-prompt"]
+    }
+
+    // 对Linux应用安装器添加额外操作
+    if (org.gradle.internal.os.OperatingSystem.current().linux) {
+        // 判断系统类型来选择生成包格式
+        var isRedHat = Files.readString(Path.of("/proc/version")).contains("Red Hat")
+        installerOptions += ["--type", isRedHat ? "rpm" : "deb"]
+
+        installerOptions += ["--linux-shortcut"]
     }
 }
 
